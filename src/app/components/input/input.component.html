@@ -1,0 +1,23 @@
+<div class="form-control">
+    <label *ngIf="label">{{ label }}</label>
+    
+    <!-- Text and Number Input -->
+    <input
+      *ngIf="type !== 'textarea'"
+      [type]="type"
+      [placeholder]="placeholder"
+      [value]="value"
+      (input)="updateValue($event)"
+      [disabled]="isDisabled"
+    />
+  
+    <!-- Textarea Input -->
+    <textarea
+      *ngIf="type === 'textarea'"
+      [placeholder]="placeholder"
+      [value]="value"
+      (input)="updateValue($event)"
+      [disabled]="isDisabled"
+    ></textarea>
+  </div>
+  

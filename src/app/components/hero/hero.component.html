@@ -1,0 +1,22 @@
+<div class="hero">
+    <div>
+        <img [src]="heroImagePath" width="90%" height=auto alt="Hero image for home page.">
+    </div>
+    <div class="hero-actions">
+        <app-button 
+            text="Fazer pedido" 
+            textColor="var(--primary-white)"
+            textHoverColor="var(--primary-brown)"
+            fillColor="var(--primary-red)"
+            (click)="goToOrder()"
+        ></app-button>
+        <app-button 
+            text="Acessar cardápio" 
+            textColor="var(--primary-brown)"
+            textHoverColor="var(--primary-white)"
+            fillColor="var(--primary-white)" 
+            outlineColor="var(--primary-red)"
+            (click)="goToMenu()"
+        ></app-button>
+    </div>
+</div>

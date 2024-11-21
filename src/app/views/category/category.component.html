@@ -1,0 +1,33 @@
+<div class="menu-container">
+    <div class="info" *ngIf="categories.length === 0">Carregando categorias...</div>
+    <div class="select-container">
+        <select 
+            id="category-select" 
+            [(ngModel)]="selectedCategory" 
+            (change)="loadHamburgersByCategory(selectedCategory)" 
+            *ngIf="categories.length > 0">
+            <option *ngFor="let category of categories" [value]="category.id">
+                {{ category.name }} 
+            </option>
+        </select>
+        <h1>˅</h1>
+    </div>
+    <ul class="container responsive-grid" *ngIf="hamburguers">
+        <li *ngFor="let hamburguer of hamburguers">
+            <app-card
+                [title]="hamburguer.name"
+                [desc]="hamburguer.ingredients"
+                imagePath="images/burguer.png"
+                (click)="goToDetails(hamburguer.id)"
+            ></app-card>
+        </li>
+    </ul>
+    
+    <app-button
+        [text]="buttonText"
+        fillColor="var(--primary-red)"
+        textColor="var(--primary-white)"
+        textHoverColor="var(--primary-brown)"
+        (click)="toggleMenuItemsVisualization($event, selectedCategory)"
+    ></app-button>
+</div>

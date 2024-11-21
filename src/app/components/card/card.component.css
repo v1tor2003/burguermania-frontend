@@ -1,0 +1,22 @@
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.card h3 {
+    color: var(--primary-brown);
+    font-size: 2em;
+}
+
+.card img {
+    width: 80%;
+    height: auto;
+}
+
+.card p {
+    padding-left: 1em;
+    font-size: 1em;
+}

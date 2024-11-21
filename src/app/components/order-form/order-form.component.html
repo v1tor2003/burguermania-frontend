@@ -1,0 +1,30 @@
+<form [formGroup]="form">
+    <app-input
+      label="Produto"
+      type="text"
+      formControlName="product"
+    ></app-input>
+  
+    <app-input
+      label="Quantidade"
+      type="number"
+      formControlName="quantity"
+    ></app-input>
+
+    <app-input
+        label="Observação"
+        type="textarea"
+        formControlName="observation"
+    ></app-input>
+    
+    <app-button
+        text="Finalizar"
+        fillColor="var(--primary-red)"
+        textColor="var(--primary-white)"
+        textHoverColor="var(--primary-brown)"
+        type="submit"
+        [disabled]="form.invalid"
+        (click)="onSubmit()"
+    ></app-button>
+</form>
+  

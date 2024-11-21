@@ -1,0 +1,90 @@
+#category-select {
+    font-size: var(--page-title-size); /* Match the size of h1 */
+    font-weight: bold; /* Match the boldness of h1 */
+    font-family: inherit; /* Use the same font as h1 */
+    color: var(--primary-red); /* Set text color */
+    background-color: transparent; /* Remove default background */
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+    cursor: pointer; /* Indicate it's interactive */
+    text-align: center; /* Center the text */
+    width: fit-content; /* Adjust width to the content */
+    appearance: none; /* Remove native styling */
+    text-transform: uppercase;
+  }
+  
+  #category-select:focus {
+    outline: none; /* Ensure no border on focus */
+  }
+  
+  #category-select option {
+    font-size: 1rem; /* Adjust the font size of dropdown options */
+    font-weight: normal; /* Set option font-weight */
+  }
+
+  .menu-container {
+    display: flex;
+    height: 100%;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+  }
+  .menu-container h1 {
+    margin: 0;
+    color: var(--primary-red);
+    font-size: var(--page-title-size);
+    text-transform: uppercase;
+  }
+  
+  .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .info h3 {
+    font-weight: 200;
+    color: var(--primary-red);
+  }
+  
+  .container{
+    width: 80%;
+  }
+  
+  li {
+    border-radius: 5px;
+    list-style: none;
+    transition: border 0.3, ease-in-out;
+  }
+  
+  li:hover{
+    border: 1px solid var(--primary-red);
+  }
+  
+  .responsive-grid {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .select-container {
+    display: flex;
+  }
+  
+  @media (max-width: 1024px) {
+    .responsive-grid {
+      grid-template-columns: repeat(2, 1fr);  /* 2 items per row on smaller screens */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .responsive-grid {
+      grid-template-columns: 1fr;  /* 1 item per row on very small screens */
+    }
+  }
+    
+  

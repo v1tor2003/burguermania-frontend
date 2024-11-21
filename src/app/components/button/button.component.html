@@ -1,0 +1,14 @@
+<button
+  [ngStyle]="{
+    '--btn-fill': fillColor || 'transparent',
+    '--btn-outline': outlineColor || 'transparent',
+    '--btn-text': textColor || 'var(--primary-white)',
+    '--btn-text-hover' : textHoverColor || 'var(--primary-white)'
+  }"
+  class="custom-button"
+  [type]="type"
+  [disabled]="disabled"
+  (click)="onClick($event)"
+>
+  {{ text }}
+</button>

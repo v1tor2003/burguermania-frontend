@@ -1,0 +1,23 @@
+<nav class="navbar">
+    <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle navigation bar">
+        <span *ngIf="!menuOpen">☰</span>
+        <span *ngIf="menuOpen">✖</span>
+    </button>
+    <ul class="nav-links" [class.active]="menuOpen">
+        <li>
+            <a href="/" routerLink="/" routerLinkActive="active" (click)="closeMenu()">Início</a>
+        </li>
+        <li>
+            <a href="/category" routerLink="/category" routerLinkActive="active" (click)="closeMenu()">Categoria</a>
+        </li>
+        <li>
+            <a href="/menu" routerLink="/menu" routerLinkActive="active" (click)="closeMenu()">Cardápio</a>
+        </li>
+        <li>
+            <a href="#" routerLink="/localization" routerLinkActive="active" (click)="closeMenu()">Locatização</a>
+        </li>
+        <li>
+            <a href="#" routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contato</a>
+        </li>
+    </ul>
+</nav>

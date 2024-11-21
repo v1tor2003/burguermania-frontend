@@ -1,0 +1,90 @@
+{
+    "category": [
+        {
+            "id": "1",
+            "name": "Vegano"
+        },
+        {
+            "id": "2",
+            "name": "Clássico"
+        },
+        {
+            "id": "3",
+            "name": "Premium"
+        },
+        {
+            "id": "4",
+            "name": "Frango"
+        },
+        {
+            "id": "5",
+            "name": "Peixe"
+        }
+    ],
+    "hamburguers": [
+        {
+            "id": "1",
+            "name": "X-Fruta",
+            "ingredients": "Pão vegano, hambúrguer de grão-de-bico, alface, tomate, fatias de manga, molho especial",
+            "price": 15,
+            "categoryId": "1",
+            "desc": "Uma explosão de sabores naturais! O X-Fruta combina o frescor das frutas com a crocância do hambúrguer vegano de grão-de-bico, criando uma experiência saudável e deliciosa."
+        },
+        {
+            "id": "2",
+            "name": "X-Tradicional",
+            "ingredients": "Pão com gergelim, hambúrguer de carne bovina, queijo cheddar, alface, tomate, ketchup e maionese",
+            "price": 12.50,
+            "categoryId": "2",
+            "desc": "O clássico que nunca sai de moda! Um hambúrguer saboroso e equilibrado, perfeito para quem busca o tradicional com um toque especial."
+        },
+        {
+            "id": "3",
+            "name": "X-Bacon Premium",
+            "ingredients": "Pão brioche, hambúrguer artesanal, queijo gouda, fatias de bacon crocante, cebola caramelizada, rúcula e molho barbecue",
+            "price": 25,
+            "categoryId": "3",
+            "desc": "Uma experiência gourmet com bacon crocante e queijo gouda. O X-Bacon Premium é perfeito para os amantes de um sabor robusto e marcante."
+        },
+        {
+            "id": "4",
+            "name": "X-Frango Crocante",
+            "ingredients": "Pão com gergelim, peito de frango empanado, queijo prato, alface americana, maionese temperada",
+            "price": 18,
+            "categoryId": "4",
+            "desc": "Delicioso e leve, o X-Frango Crocante combina um frango empanado crocante com a suavidade da maionese temperada."
+        },
+        {
+            "id": "5",
+            "name": "X-Salmão",
+            "ingredients": "Pão integral, hambúrguer de salmão grelhado, cream cheese, alface e molho de dill",
+            "price": 28,
+            "categoryId": "5",
+            "desc": "Elegante e saudável, o X-Salmão traz um toque de sofisticação com salmão grelhado e um molho de dill único."
+        },
+        {
+            "id": "6",
+            "name": "X-Tofu Especial",
+            "ingredients": "Pão vegano, tofu grelhado, cogumelos salteados, rúcula, molho de tahine",
+            "price": 20,
+            "categoryId": "1",
+            "desc": "O X-Tofu Especial é uma escolha refinada e saudável, com tofu grelhado e cogumelos que encantam os paladares mais exigentes."
+        },
+        {
+            "id": "7",
+            "name": "X-Queijo Duplo",
+            "ingredients": "Pão de hambúrguer, hambúrguer de carne bovina, queijo cheddar duplo, molho especial",
+            "price": 16,
+            "categoryId": "2",
+            "desc": "Para os fãs de queijo, o X-Queijo Duplo é uma explosão de sabor com camadas generosas de cheddar e um molho irresistível."
+        },
+        {
+            "id": "8",
+            "name": "X-Cordeiro Gourmet",
+            "ingredients": "Pão ciabatta, hambúrguer de cordeiro, queijo feta, tomate seco, rúcula e molho de hortelã",
+            "price": 30,
+            "categoryId": "3",
+            "desc": "Uma criação exclusiva com cordeiro suculento, queijo feta e um toque refrescante de hortelã para uma experiência inesquecível."
+        }
+    ]
+}

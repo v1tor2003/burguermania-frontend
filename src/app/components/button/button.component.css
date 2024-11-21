@@ -1,0 +1,30 @@
+.custom-button {
+    width: var(--btn-width);
+    height: var(--btn-height);
+    font-size: var(--btn-text-size);
+    font-weight: var(--btn-text-weight);
+    line-height: var(--btn-line-height);
+    cursor: pointer;
+    background-color: var(--btn-fill, transparent);
+    border: 1px solid var(--btn-outline, transparent);
+    color: var(--btn-text, #000);
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s, transform 0.2s;
+}
+  
+.custom-button:hover {
+    background-color: var(--btn-outline, transparent);
+    border-color: var(--btn-fill, transparent);
+    color: var(--btn-text-hover, transparent); 
+}
+
+@media (max-width: 460px) {
+    .custom-button { 
+        width: 80%;
+        height: auto;
+        font-size: 0.5rem; 
+        padding: 0.8em;
+    }
+}
+  
+  
+  

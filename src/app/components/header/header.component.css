@@ -1,0 +1,7 @@
+header {
+    display: flex;
+    padding-top: var(--header-top-padding);
+    padding-left: var(--header-side-padding);
+    padding-right: var(--header-side-padding);
+    justify-content: space-between;
+}

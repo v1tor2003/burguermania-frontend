@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-font-family: sans-serif;
+    --primary-red: #ED0000;
+    --primary-white: white;
+    --primary-brown: #521D16;
+    --btn-width: 16rem;
+    --btn-height: 4rem;
+    --btn-text-weight: 600;
+    --btn-text-size: 1.3em;
+    --btn-line-height: 1.8em;
+    --header-top-padding: 1rem;
+    --header-side-padding: 4rem;
+    --page-title-size: 3em;
+}
+
+* {
+    font-family: var(--primary-font-family);
+}

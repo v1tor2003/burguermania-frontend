@@ -24,4 +24,8 @@ input:disabled, textarea:disabled {
 textarea {
     resize: vertical;
 }
+
+.required {
+    color: red;
+}
   

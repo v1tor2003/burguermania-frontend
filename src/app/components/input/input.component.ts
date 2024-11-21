@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { AbstractControl, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-input',
@@ -16,20 +17,33 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
     },
   ],
 })
-export class InputComponent {
+export class InputComponent implements OnInit{
   @Input() label: string = ''; // Label for the input
   @Input() type: 'text' | 'textarea' | 'number' = 'text'; // Type of input
   @Input() placeholder: string = ''; // Placeholder text
-
+  @Input() control: AbstractControl | null = null;
+  
   value: any = '';
-  isDisabled: boolean = false;
+  labelWithAsterisk!: SafeHtml;
+
+  constructor(private sanitizer: DomSanitizer) {}
 
   // Callbacks for ControlValueAccessor
-  private onChange: (value: any) => void = () => {};
+  private onChange: (value: any) => void = () => { };
   private onTouched: () => void = () => {};
 
+  ngOnInit(): void {
+    if (this.control && this.control.hasValidator && this.control.hasValidator(Validators.required)) {
+      const html = `${this.label} <span style="color:red;" class="required">*</span>`;
+      this.labelWithAsterisk = this.sanitizer.bypassSecurityTrustHtml(html);
+    } else {
+      this.labelWithAsterisk = this.label;
+    }
+  }
+
   writeValue(value: any): void {
-    this.value = value;
+    if(value !== undefined)
+      this.value = value;
   }
 
   registerOnChange(fn: (value: any) => void): void {
@@ -41,12 +55,9 @@ export class InputComponent {
   }
 
   updateValue(event: Event): void {
-    this.value = event.target as HTMLInputElement | HTMLTextAreaElement;
+    const input = event.target as HTMLInputElement | HTMLTextAreaElement;
+    this.value = input.value; 
     this.onChange(this.value);
     this.onTouched();
-  }
-
-  setDisabledState(isDisabled: boolean): void {
-    this.isDisabled = isDisabled;
   }
 }

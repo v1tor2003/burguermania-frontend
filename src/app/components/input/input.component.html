@@ -1,23 +1,31 @@
 <div class="form-control">
-    <label *ngIf="label">{{ label }}</label>
-    
-    <!-- Text and Number Input -->
-    <input
-      *ngIf="type !== 'textarea'"
-      [type]="type"
-      [placeholder]="placeholder"
-      [value]="value"
-      (input)="updateValue($event)"
-      [disabled]="isDisabled"
-    />
+  <label for="input-field" [innerHTML]="labelWithAsterisk"></label>
+    <ng-container [ngSwitch]="type">
+      <input 
+        *ngSwitchCase="'text'" 
+        id="input-field" 
+        type="text" 
+        [value]="value" 
+        (input)="updateValue($event)" 
+        [placeholder]="placeholder" 
+        />
   
-    <!-- Textarea Input -->
-    <textarea
-      *ngIf="type === 'textarea'"
-      [placeholder]="placeholder"
-      [value]="value"
-      (input)="updateValue($event)"
-      [disabled]="isDisabled"
-    ></textarea>
+      <input 
+        *ngSwitchCase="'number'" 
+        id="input-field" 
+        type="number" 
+        [value]="value" 
+        (input)="updateValue($event)" 
+        [placeholder]="placeholder" 
+        />
+  
+      <textarea 
+        *ngSwitchCase="'textarea'" 
+        id="input-field" 
+        [value]="value" 
+        (input)="updateValue($event)" 
+        [placeholder]="placeholder" 
+        ></textarea>
+    </ng-container>
   </div>
   

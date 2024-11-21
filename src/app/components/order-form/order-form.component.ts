@@ -20,11 +20,12 @@ export class OrderFormComponent {
     this.form = this.fb.group({
       product: ['', Validators.required],
       observation: ['', [Validators.required, Validators.minLength(10)]],
-      quantidade: [null, [Validators.required, Validators.min(0)]],
+      quantity: [null, [Validators.required, Validators.min(0)]],
     });
   }
 
-  onSubmit(): void {
-    window.alert('Pedido finalizado.');
+  onSubmit(event: Event): void {
+    event.preventDefault()
+    window.alert('Pedido submetido.');
   }
 }

@@ -6,7 +6,7 @@
     '--btn-text-hover' : textHoverColor || 'var(--primary-white)'
   }"
   class="custom-button"
-  [type]="type"
+  [type]="type || 'button'"
   [disabled]="disabled"
   (click)="onClick($event)"
 >

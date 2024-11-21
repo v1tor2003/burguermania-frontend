@@ -1,20 +1,25 @@
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+  <div class="line-inputs">
     <app-input
-      label="Produto"
+      label="Produto:"
       type="text"
       formControlName="product"
+      [control]="form.get('product')"
     ></app-input>
   
     <app-input
-      label="Quantidade"
+      label="Quantidade:"
       type="number"
       formControlName="quantity"
+      [control]="form.get('quantity')"
     ></app-input>
+  </div>
 
-    <app-input
-        label="Observação"
-        type="textarea"
-        formControlName="observation"
+    <app-input class="observation"
+      label="Observação:"
+      type="textarea"
+      formControlName="observation"
+      [control]="form.get('observation')"
     ></app-input>
     
     <app-button
@@ -23,8 +28,6 @@
         textColor="var(--primary-white)"
         textHoverColor="var(--primary-brown)"
         type="submit"
-        [disabled]="form.invalid"
-        (click)="onSubmit()"
     ></app-button>
 </form>
   

@@ -1,27 +1,108 @@
-# BurguermaniaFrontend
+# BurguerMania FrontEnd
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
+**Description**: This project was proposed as part of the FullStack track in the ResTic36 program, serving as the final project. It is a web application for managing a burger shop that includes a simulated backend API using json-server and a dynamic frontend built with Angular. The project allows users to view burger categories, browse available burgers, and place orders through a fully interactive interface.
 
-## Development server
+The application includes a mock API to simulate real-world backend functionality and utilizes Angular's reactive forms for handling user input. This project showcases the integration of both frontend and backend technologies in a full-stack application, providing a complete workflow from data handling to user interaction.
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Before running the project, ensure you have the following installed:
 
-## Code scaffolding
+- [Node.js](https://nodejs.org/) (v18.x or higher)
+- [npm](https://www.npmjs.com/get-npm) (Node Package Manager)
+- [Angular CLI](https://angular.io/cli) (if you want to interact with the Angular app)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+Follow these steps to get the project up and running:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/v1tor2003/burguermania-frontend
+   cd burguermania-frontend
+   ```
 
-## Running unit tests
+2. **Install dependencies**:
+   The project uses `json-server` as a development dependency to simulate a backend API.
+   Install all required dependencies, including `json-server`:
+   ```bash
+   npm install
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. **Start the mock API**:
+   Run the following command to start the mock API using `json-server`:
+   ```bash
+   npm run start:mock
+   ```
 
-## Running end-to-end tests
+4. **Start the Angular development server**:
+   In a new terminal window, start the Angular development server:
+   ```bash
+   ng serve
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+5. Open your browser and navigate to `http://localhost:4200/` to see the project in action.
 
-## Further help
+## `json-server` Setup
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+During development, the mock API is served by `json-server`. It listens on `http://localhost:3000` and can be configured via the `db.json` file in the project root.
+
+### Available API Endpoints
+
+- **GET** `/categories` - Get all categories
+- **GET** `/hamburgers` - Get all hamburgers
+- **GET** `/hamburgers/{id}` - Get a hamburger by its `id`
+
+Refer to `db.json` for the database structure and available mock data.
+
+### Using `json-server` for mock API
+
+The mock API is powered by `json-server`. You can customize the mock data by editing `db.json`.
+
+To start the mock server independently (without Angular frontend), run:
+```bash
+npx json-server --watch db.json --port 3000
+```
+
+## Scripts
+
+### `npm run start:mock`
+
+Starts `json-server` to serve the mock API. The mock data is located in `db.json`, and the server will run on `http://localhost:3000`.
+
+### `ng serve`
+
+Starts the Angular development server and serves the frontend application. By default, the application will be available at `http://localhost:4200`.
+
+### `npm run build`
+
+Builds the Angular project for production and places the output in the `dist/` directory.
+
+### `npm test`
+
+Runs unit tests for the Angular project using Karma and Jasmine.
+
+### `npm run lint`
+
+Checks the Angular project for linting issues using TSLint.
+
+### `npm run e2e`
+
+Runs end-to-end tests for the Angular project using Protractor.
+
+## Directory Structure
+
+- `src/` – Contains the source code for the Angular frontend.
+- `src/app/` – Contains components, services, and other Angular application logic.
+- `db.json` – Mock data file used by `json-server` for simulating a backend API.
+- `angular.json` – Angular CLI configuration file.
+- `package.json` – Contains dependencies and scripts for the project.
+
+## Troubleshooting
+
+### Error: `json-server` not found
+
+Ensure that `json-server` is installed correctly. If the issue persists, try running:
+```bash
+npm install json-server --save-dev
+```
+

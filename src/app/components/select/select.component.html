@@ -1,0 +1,13 @@
+<div class="form-control">
+    <label for="input-field" [innerHTML]="labelWithAsterisk"></label>
+    <select 
+      id="select" 
+      [formControl]="control" 
+      (change)="onSelectionChange($event)">
+      <option value="" disabled selected>Selecione</option>
+      <option *ngFor="let option of options" [value]="option.value">
+        {{ option.label }}
+      </option>
+    </select>
+  </div>
+  

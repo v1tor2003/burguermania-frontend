@@ -1,12 +1,13 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
   <div class="line-inputs">
-    <app-input
+    <app-select
       label="Produto:"
-      type="text"
-      formControlName="product"
-      [control]="form.get('product')"
-    ></app-input>
-  
+      [options]="hamburguerOptions"
+      [required]="true"
+      [control]="getControl('product')"
+      (selectionChange)="onProductSelected($event)">
+    </app-select>
+
     <app-input
       label="Quantidade:"
       type="number"

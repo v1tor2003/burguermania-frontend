@@ -5,8 +5,8 @@
         <li *ngFor="let hamburguer of hamburguers">
             <app-card
                 [title]="hamburguer.name"
-                [desc]="hamburguer.ingredients"
-                imagePath="images/burguer.png"
+                [desc]="hamburguer.baseDescription"
+                [imagePath]="hamburguer.pathImage"
                 (click)="goToDetails(hamburguer.id)"
             ></app-card>
         </li>

@@ -31,7 +31,6 @@ export class MenuComponent implements OnInit {
   }
 
   toggleMenuItemsVisualization(event: MouseEvent): void {
-    console.log(this.menuIsExpanded)
     event.stopPropagation()
     if(!this.menuIsExpanded){
       this.loadAllHamburguers();

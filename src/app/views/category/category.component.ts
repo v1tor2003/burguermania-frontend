@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
   templateUrl: './category.component.html',
   styleUrl: './category.component.css'
 })
+
 export class CategoryComponent implements OnInit {
   private menuIsExpanded: boolean = false;  
   buttonText: string = '';
@@ -56,7 +57,6 @@ export class CategoryComponent implements OnInit {
   }
 
   toggleMenuItemsVisualization(event: MouseEvent, categoryId: string): void {
-    console.log(this.menuIsExpanded)
     event.stopPropagation()
     if(!this.menuIsExpanded){
       this.loadHamburgersByCategory(categoryId);

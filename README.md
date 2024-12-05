@@ -28,19 +28,32 @@ Follow these steps to get the project up and running:
    npm install
    ```
 
-3. **Start the mock API**:
-   Run the following command to start the mock API using `json-server`:
+3. **Use the mock API**:
+   For easy run, you can follow the command to start the mock API using `json-server`:
+   You gotta set hamburguer.service.ts and order.service.ts have the url set to use the mock API:
+   ```javascript
+   private readonly API_URL: string = 'http://localhost:3000/api';
+   ```
+   Then you can start the mock server:
    ```bash
    npm run start:mock
    ```
-
-4. **Start the Angular development server**:
+5. **Use the .NET API**:
+   This project supports calls to a dedicated .NET backend for retrienving data. `.NET ASP.NET Core`:
+   You should clone the API project and run so it can serve the data.
+   Go to this repo: `https://github.com/v1tor2003/burguermania-backend`
+   Clone it and follow all the necessary steps.
+   Make sure the hamburguer.service.ts and order.service.ts have set the api url to use the .NET project:
+   ```javascript
+   private readonly API_URL: string = 'http://localhost:5038/api';
+   ```
+7. **Start the Angular development server**:
    In a new terminal window, start the Angular development server:
    ```bash
    ng serve
    ```
 
-5. Open your browser and navigate to `http://localhost:4200/` to see the project in action.
+8. Open your browser and navigate to `http://localhost:4200/` to see the project in action.
 
 ## `json-server` Setup
 
